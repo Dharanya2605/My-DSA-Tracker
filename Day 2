@@ -1,0 +1,24 @@
+Today, I explored another interesting problem on binary search
+
+## 🌸 Problem: Minimum Number of Days to Make m Bouquets (LeetCode 1482)
+
+**🔍 Problem Statement:**  
+You're given an array `bloomDay[]` where `bloomDay[i]` is the day the *i-th* flower blooms. You need to make `m` bouquets, and each bouquet needs `k` **adjacent bloomed** flowers. Return the **minimum day** you need to wait to make all bouquets. Return `-1` if not possible.
+
+
+### 💡 Binary Search Intuition:
+
+- If `m * k > bloomDay.length` → Not enough flowers → Return `-1`
+- Find `min` and `max` of bloomDay → Set `low = min`, `high = max`
+- Binary search on **days**:
+  - For each `mid = (low + high) / 2`, check if it's **possible** to make `m` bouquets.
+  - If yes → try smaller days (`high = mid - 1`)
+  - Else → try more days (`low = mid + 1`)
+
+Final answer is `low`.
+
+
+### ✅ My Work:
+![Accepted Solution](./BinarySearch/minimum-days-make-bouquets.png)
+
+
